@@ -3,7 +3,7 @@ FROM gradle:7-jdk11 AS build
 COPY --chown=gradle:gradle . /container
 WORKDIR /container
 RUN chmod +x ./gradlew
-RUN ./gradlew jar --no-daemon
+RUN mvn clean package
 
 # RUN
 FROM openjdk:11
