@@ -7,6 +7,6 @@ RUN mvn clean package
 # RUN
 FROM openjdk:11
 COPY --from=build . /bin
-WORKDIR /bin/container/build/libs
+WORKDIR /bin/container/target
 
 ENTRYPOINT ["java","-jar","TaskSchedulerAvisi-1.0.jar"]
