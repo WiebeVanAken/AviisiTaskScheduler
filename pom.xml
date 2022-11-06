@@ -6,7 +6,7 @@
 
     <artifactId>TaskSchedulerAvisi</artifactId>
     <groupId>avisi.taskscheduler</groupId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>Avisi.TaskScheduler</name>
@@ -27,6 +27,7 @@
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -100,7 +101,5 @@
             <version>1.7.10</version>
         </dependency>
     </dependencies>
-
-
 
 </project>
