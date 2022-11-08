@@ -1,8 +1,9 @@
 name: Publish Docker Image
 
 on:
-   push:
-     branches: [master]
+   workflow_dispatch
+#   push:
+#     branches: [master]
 
 env:
   REGISTRY: ghcr.io
@@ -30,6 +31,11 @@ jobs:
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          
+      - name: Test application
+        id: test
+        run: mvn test
+        
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
